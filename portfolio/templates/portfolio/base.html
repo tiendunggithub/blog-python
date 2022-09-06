@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+    {% endblock title %}</title>
+    <link rel="stylesheet" href="{%static 'portfolio/css/style.css' %}">
+    <!-- ======================FontAwesome=============================== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- ===================================================================== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+</head>
+<body>
+    <!-- menu -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="#">Portfo<span>lio.</span></a>
+            </div>
+            <!-- ul.menu>li*6>a -->
+            <ul class="menu">
+                <li><a href="#home" class="menu-btn">Trang Chủ</a></li>
+                <li><a href="#about" class="menu-btn">Giới thiệu</a></li>
+                <li><a href="blog\" class="menu-btn">Blog</a></li>
+                <li><a href="#services" class="menu-btn">Ứng dụng</a></li>
+                <li><a href="#skills" class="menu-btn">Kỹ năng</a></li>
+                <li><a href="#contact" class="menu-btn">Liên hệ</a></li>
+            </ul>
+            <div class="listmenu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <!-- home -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-context">
+                {% block text %}
+                {% endblock text %}
+            </div>
+        </div>
+    </section>
+    <!-- about -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">Giới thiệu</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="{%static 'portfolio/css/img/bg.jpg'%}" alt="">
+                </div>
+                <div class="column right">
+                    <div class="text">Tôi là sinh viên <span class="typing-2"></span></div>
+                    <p>Hiện tại tôi đang học tập và rèn luyện tại trường Đại học Phú Xuân với chuyên ngành CNTT. </p>
+                    <a href="#">Download CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">Ứng dụng</h2>
+            <div class="serv-content">
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-paint-brush"></i>
+                        <div class="text">Thiết kế website</div>
+                        <p>Thiết kế website theo yêu cầu của khách hàng.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="text">Nội dung</div>
+                        <p>Đảm bảo nội dung chất lượng, phù hợp với nhu cầu của khách hàng</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <i class="fas fa-code"></i>
+                        <div class="text">Hỗ trợ</div>
+                        <p>Hỗ trợ trọn đời, bất cứ lúc nào mà khách hàng cần</p>
+                    </div>
+                </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills section start -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">Kỹ năng</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="text">Kỹ năng của tôi</div>
+                    <p>Ngoài những kỹ năng chuyên môn, tôi còn Có các kỹ năng khác như: làm việc nhóm</p>
+                    <a href="#">Đọc thêm</a>
+                </div>
+                <div class="column right">
+                    <div class="bars">
+                        <div class="info">
+                            <span>HTML</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="line html"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>CSS</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line css"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JavaScript</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="line js"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>JAVA</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line java"></div>
+                    </div>
+                    <div class="bars">
+                        <div class="info">
+                            <span>MySQL</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="line mysql"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Liên hệ</h2>
+            <div class="contact-content">
+                <div class="column left">
+                    <div class="text">Liên lạc</div>
+                    <p>Liên lạc cho tôi nếu bạn có thắc mặc hoặc cần biết thêm thông tin</p>
+                    <div class="icons">
+                        <div class="row">
+                            <i class="fas fa-user"></i>
+                            <div class="info">
+                                <div class="head">Họ tên</div>
+                                <div class="sub-title">Nguyễn Võ Tiến Dũng</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info">
+                                <div class="head">Địa chỉ</div>
+                                <div class="sub-title">Quảng Bình</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info">
+                                <div class="head">Email</div>
+                                <div class="sub-title">tiendung1001gn@gmail.com</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="text">Nhắn tin cho tôi</div>
+                    <form action="#">
+                        <div class="fields">
+                            <div class="field name">
+                                <input type="text" placeholder="Họ tên" required>
+                            </div>
+                            <div class="field email">
+                                <input type="email" placeholder="Email" required>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="..." required>
+                        </div>
+                        <div class="field textarea">
+                            <textarea cols="30" rows="10" placeholder="Tin nhắn.." required></textarea>
+                        </div>
+                        <div class="button-area">
+                            <button type="submit">Gửi tin nhắn</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <span>TienDung</span> | <i class="far fa-copyright"></i> 2021
+    </footer>
+    <!-- <script  src="{%static 'portfolio/script.js' %}" type="text/javascript"></script> -->
+    <!-- {% block javascripts %}
+    
+    <script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            if(this.scrollY > 20){
+                $('.navbar').addClass("sticky");
+            }else{
+                $('.navbar').removeClass("sticky");
+            }
+        })
+        // toggle menu/navbar script
+        $('.listmenu-btn').click(function(){
+            $('.navbar .menu').toggleClass("active");
+            $('.listmenu-btn i').toggleClass("active");
+        });
+    });</script>
+    {% endblock javascripts %} -->
+</body>
+</html>

@@ -1,0 +1,65 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#chinh{
+    padding: 0;
+    padding-left: 20px;
+}
+.wrapper{
+    /* position: relative; */
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* grid-template-columns: repeat(3, 32.36%); */
+    grid-gap: 20px;
+    padding: 20px;
+}
+.wrapper .card{
+    width: 100%;
+    background: #fff;
+}
+.wrapper .card .card-content .author,.detail .author{
+    color: rgb(151, 150, 150);
+}
+.wrapper .card .card-content{
+    padding: 10px;
+}
+.wrapper .card .card-content .description, 
+.wrapper .card .card-content .author{
+    padding-top: 5px;
+}
+.wrapper .card .card-content .title a{
+    text-decoration: none;
+    color: black;
+}
+.wrapper .card .card-content .title a:hover{
+    text-decoration: none;
+    color: red;
+    transition: 0.3s;
+    font-weight: 600;
+}
+.wrapper .card .card-img{
+    position: relative;
+    width: 100%;
+    height: 250px;
+}
+.wrapper .card .card-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+.footer1{
+    background: #111;
+    padding: 15px 23px;
+    color: blanchedalmond;
+    text-align: center;
+}
+.footer1 span{
+    color: #FF8246;
+}
+

@@ -1,0 +1,66 @@
+{% extends "blog/base.html" %}
+{% block title %}
+Blog
+{% endblock title %}
+<h2>There are {{blogs.count}} blogs</h2>
+{% block content %}
+<div class="row">
+    <div class="col-sm-10">
+        <div class="wrapper">
+            {% for blog in blogs %}
+            <div class="card">
+                <div class="card-img">
+                    <img src="{{ blog.image.url }}" alt="########" >
+                </div>
+                <div class="card-content">
+                    <div class="title">
+                        <a href="{% url 'blog:detail' blog.id %}" > {{ blog.title }}</a>
+                    </div>
+                    <div class="author">
+                        <i class="fas fa-user"></i> {{ blog.author }} |
+                        <i class="far fa-clock"></i> {{ blog.created_on|date:'d/m/Y' }}
+                        <!-- <p>{{ blog.cr|date:'d/m/Y' }}</p> -->
+                    </div>
+                    <div class="description">
+                        {{ blog.description|truncatechars:100 }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="wrapper" id="chinh">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                {% if blogs.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item "><a class="page-link" href="?page={{ blogs.previous_page_number }}">&lsaquo;</a></li>    
+                {% endif %}
+                {% for i in nums %}
+                    <li class="page-item"><a class="page-link" href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>
+                {% endfor %}
+                {% if blogs.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ blogs.next_page_number }}">&rsaquo;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ blogs.paginator.num_pages }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+    <!-- <p class="text-center">
+        <button class="btn btn-dark" id="loadmoreBtn">Load More</button>
+    </p> -->
+    
+</div>
+{% endblock content %}

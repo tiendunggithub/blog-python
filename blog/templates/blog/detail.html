@@ -1,0 +1,42 @@
+{% extends "blog/base.html" %}
+{% block title %}
+Detail Blog
+{% endblock title %}
+
+{% block content %}
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'blog:detail' blog.id %}">Chi tiết</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Data</li>
+    </ol>
+  </nav>
+  <div class="container">
+<div class="detail">
+    <h1>{{blog.title}}</h1>
+    <div class="author">
+        <i class="fas fa-user"></i> {{ blog.author }}&nbsp; |&nbsp;
+        <i class="far fa-clock"></i> {{ blog.created_on|date:'d/m/Y' }}
+    </div>
+    
+<p>{{blog.description|safe|linebreaks}}</p>
+</div>
+</div>
+<div class="container">
+  <h1>Có thể bạn thích</h1>
+  <hr>
+  {% for blog in like_blog %}
+  <p ><a href="{% url 'blog:detail' blog.id %}" style="text-decoration: none; color: black;">{{ blog.title }}</a></p>
+  {% empty %}
+  Không có bài viết liên quan
+  {% endfor %}
+
+  <h1>Bài viết liên quan</h1>
+  <hr>
+  {% for blog in similar_blog %}
+  <p ><a href="{% url 'blog:detail' blog.id %}" style="text-decoration: none; color: black;">{{ blog.title }}</a></p>
+  {% empty %}
+  Không có bài viết liên quan
+  {% endfor %}
+</div>
+{% endblock content %}

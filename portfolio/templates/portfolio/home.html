@@ -1,0 +1,23 @@
+{% extends "portfolio/base.html" %}
+<!-- {% load static %}
+<h1>Hello word</h1>
+<h2>Tien Dung Portfolio</h2>
+<a href="{%static 'portfolio/slide.pdf' %}">PDF</a>
+<br>
+<img src="{% static 'portfolio/mullet.jpg' %}" width="50%" height="50%">
+
+{% for project in projects %}
+<h2>{{ project.title }}</h2>
+<p>{{ project.description }}</p>
+<img src="{{project.image.url}}" alt="######"> -->
+<!-- {{ project.image }} -->
+<!-- {% endfor %} -->
+{% block title %}Profile{% endblock title %}
+{% block text %}
+<div class="home-content">
+    <div class="text1">Xin chào, tôi tên là</div>
+    <div class="text2">Tiến Dũng</div>
+    <div class="text3">Tôi là <span>lập trình viên</span></div>
+    <a href="#">Liên Hệ</a>
+</div>
+{% endblock text %}
